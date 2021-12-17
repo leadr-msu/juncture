@@ -19,10 +19,10 @@ const dependencies = [
     'https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js',
     'https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js',
     'https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js',
-    'https://jstor-labs.github.io/visual-essays/js/L.Control.Opacity.js',
-    'https://jstor-labs.github.io/visual-essays/js/leaflet-fa-markers.js',
-    'https://gitcdn.link/repo/pa7/heatmap.js/develop/build/heatmap.min.js',
-    'https://gitcdn.link/repo/pa7/heatmap.js/develop/plugins/leaflet-heatmap/leaflet-heatmap.js'
+    'https://jstor-labs.github.io/juncture/js/L.Control.Opacity.js',
+    'https://jstor-labs.github.io/juncture/js/leaflet-fa-markers.js',
+    'https://jstor-labs.github.io/juncture/js/heatmap.min.js',
+    'https://jstor-labs.github.io/juncture/js/leaflet-heatmap.js'
 ]
 
 // Some leaflet baselayers
@@ -175,7 +175,7 @@ module.exports = {
     },
     methods: {
         init() {
-            console.log(this.$options.name, this.mapDef, this.items)
+            // console.log(this.$options.name, this.mapDef, this.items)
             
             if (this.viewerIsActive) {
                 this.$nextTick(() => {
@@ -226,7 +226,7 @@ module.exports = {
             }
         },
         addTimeDimension() {
-            console.log(`timeDimension: timeInterval=${this.timeInterval} period=${this.period} loop=${this.loop} autoPlay=${this.autoPlay} transitionTime=${1000/this.fps}`)
+            // console.log(`timeDimension: timeInterval=${this.timeInterval} period=${this.period} loop=${this.loop} autoPlay=${this.autoPlay} transitionTime=${1000/this.fps}`)
             let timeDimension = new L.TimeDimension({
                 // times: [],
                 timeInterval: this.timeInterval,
@@ -680,7 +680,7 @@ module.exports = {
     watch: {
         mapDef: {
             handler: function (mapDef) {
-                console.log('mapDef', mapDef)
+                // console.log('mapDef', mapDef)
                 this.removeTimeDimension()
                 if (this.timeDimension) {
                     this.addTimeDimension()
@@ -731,7 +731,7 @@ module.exports = {
         },
         items: {
             handler: function () {
-                console.log('map.items', this.items)
+                // console.log('map.items', this.items)
             },
             immediate: true
         },
